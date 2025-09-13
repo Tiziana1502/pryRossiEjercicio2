@@ -33,75 +33,87 @@
             txtDistancia = new TextBox();
             lblDias = new Label();
             nudDias = new NumericUpDown();
-            lstResultado = new ListBox();
             btnCalcular = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudDias).BeginInit();
             SuspendLayout();
             // 
             // lblDistancia
             // 
             lblDistancia.AutoSize = true;
-            lblDistancia.Location = new Point(58, 61);
+            lblDistancia.Font = new Font("Segoe UI", 10.2F);
+            lblDistancia.Location = new Point(33, 54);
             lblDistancia.Name = "lblDistancia";
-            lblDistancia.Size = new Size(70, 20);
+            lblDistancia.Size = new Size(79, 23);
             lblDistancia.TabIndex = 0;
             lblDistancia.Text = "Distancia";
             // 
             // txtDistancia
             // 
-            txtDistancia.Location = new Point(157, 61);
+            txtDistancia.Location = new Point(155, 54);
             txtDistancia.Margin = new Padding(3, 4, 3, 4);
             txtDistancia.Name = "txtDistancia";
             txtDistancia.Size = new Size(77, 27);
             txtDistancia.TabIndex = 1;
+            txtDistancia.TextChanged += txtDistancia_TextChanged;
             // 
             // lblDias
             // 
             lblDias.AutoSize = true;
-            lblDias.Location = new Point(58, 128);
+            lblDias.Font = new Font("Segoe UI", 10.2F);
+            lblDias.Location = new Point(33, 121);
             lblDias.Name = "lblDias";
-            lblDias.Size = new Size(102, 20);
+            lblDias.Size = new Size(116, 23);
             lblDias.TabIndex = 2;
             lblDias.Text = "Cantidad Días";
             // 
             // nudDias
             // 
-            nudDias.Location = new Point(157, 126);
+            nudDias.Enabled = false;
+            nudDias.Location = new Point(155, 121);
             nudDias.Margin = new Padding(3, 4, 3, 4);
             nudDias.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
             nudDias.Name = "nudDias";
             nudDias.Size = new Size(77, 27);
             nudDias.TabIndex = 3;
-            // 
-            // lstResultado
-            // 
-            lstResultado.FormattingEnabled = true;
-            lstResultado.Location = new Point(53, 214);
-            lstResultado.Margin = new Padding(3, 4, 3, 4);
-            lstResultado.Name = "lstResultado";
-            lstResultado.Size = new Size(212, 84);
-            lstResultado.TabIndex = 4;
+            nudDias.ValueChanged += nudDias_ValueChanged;
             // 
             // btnCalcular
             // 
             btnCalcular.BackColor = Color.FromArgb(255, 128, 128);
+            btnCalcular.Enabled = false;
             btnCalcular.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCalcular.ForeColor = SystemColors.ControlLightLight;
-            btnCalcular.Location = new Point(157, 331);
+            btnCalcular.Location = new Point(136, 197);
             btnCalcular.Margin = new Padding(3, 4, 3, 4);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(108, 34);
-            btnCalcular.TabIndex = 5;
+            btnCalcular.TabIndex = 4;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
+            btnCalcular.Click += btnCalcular_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.FromArgb(255, 128, 128);
+            btnCancelar.Enabled = false;
+            btnCancelar.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = SystemColors.ControlLightLight;
+            btnCancelar.Location = new Point(22, 197);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(108, 34);
+            btnCancelar.TabIndex = 5;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // Boletos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(325, 419);
+            ClientSize = new Size(284, 292);
+            Controls.Add(btnCancelar);
             Controls.Add(btnCalcular);
-            Controls.Add(lstResultado);
             Controls.Add(nudDias);
             Controls.Add(lblDias);
             Controls.Add(txtDistancia);
@@ -121,7 +133,7 @@
         private TextBox txtDistancia;
         private Label lblDias;
         private NumericUpDown nudDias;
-        private ListBox lstResultado;
         private Button btnCalcular;
+        private Button btnCancelar;
     }
 }
